@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1> Deltalle del Autor</h1>
+
+  <h3>Last Name: {{author.last_name}}</h3>
+  <h3>First Name: {{author.first_name}}</h3>
+
+  <div style="margin-left:20px;margin-top:20px">
+      <h4>Books</h4>
+  
+      {% for copy in author.authorinstance_set.all %}
+      
+        <p><strong>Title:</strong> {{copy.title}}</p>
+        <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
+      {% endfor %}
+  </div>    
+  
+
+{% endblock %}
